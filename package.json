@@ -1,0 +1,21 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "Estudio Cypress",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "keywords": [
+    "testing",
+    "cypress",
+    "automation"
+  ],
+  "author": "Facundo Pasqua",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.2.0",
+    "prettier": "^2.8.1"
+  }
+}
