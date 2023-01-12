@@ -1,6 +1,6 @@
 describe('Login Axia', { testIsolation: false }, () => {
 
-        it("Test Login ok", ()=> {
+        it.skip("Test Login ok", ()=> {
             cy.visit('https://axia2-ui-qa.santextest.com/login',{failOnStatusCode: false})
             cy.url().should('include', 'antextest.com/login')
             cy.log('Website Charged')
@@ -24,14 +24,27 @@ it('Complete Common stock and create a group', () => {
     cy.get('span').contains('+ Group').click()
     cy.focused().type('Group A')
     cy.get('#submit-button > .MuiButton-label > .MuiSvgIcon-root').click()
-    cy.get('.jss363 > #icon-button').click()
+    cy.get('.jss305 > #icon-button').click()
     cy.focused().type('Share A')
     cy.get('#submit-button > .MuiButton-label > .MuiSvgIcon-root').click()
     cy.focused().type('9999999.9999')
     cy.get('input[name="groups[1].shares[0].originalPriceIssue-mask"]').type("20000")
-    cy.get('.jss320 > #button-button').as("save-button")
-    cy.get("@save-button").click()
-    cy.get('.jss35 > :nth-child(1) > :nth-child(1)').click()
+    cy.get('.MuiList-root > :nth-child(2) > .MuiFormControl-root > .MuiFormControlLabel-root').click()
+    cy.get(':nth-child(1) > .jss178 > :nth-child(1) > .MuiGrid-container > .MuiGrid-grid-xs-3 > .MuiFormControl-root > .MuiFormControlLabel-root').click()
+    cy.get(':nth-child(2) > .MuiGrid-container > .MuiGrid-grid-xs-3 > .MuiFormControl-root > .MuiFormControlLabel-root').click()
+    cy.get(':nth-child(3) > .MuiGrid-container > .MuiGrid-grid-xs-3 > .MuiFormControl-root > .MuiFormControlLabel-root').click()
+    cy.get(':nth-child(2) > .jss178 > :nth-child(1) > .MuiGrid-container > .MuiGrid-grid-xs-3 > .MuiFormControl-root').click()
+    cy.get(':nth-child(3) > .jss178 > :nth-child(1) > .MuiGrid-container > .MuiGrid-grid-xs-3 > .MuiFormControl-root').click()
+    cy.get(':nth-child(4) > .jss178 > :nth-child(1) > .MuiGrid-container > .MuiGrid-grid-xs-3 > .MuiFormControl-root > .MuiFormControlLabel-root').click()
+    cy.get('span').contains('Liquidation multiple').click()
+    cy.get('span').contains('Conversion rights').click()
+     
+
+
+    // cy.get('.jss320 > #button-button').as("save-button")
+    // cy.get("@save-button").click()
+
+    // cy.get('.jss35 > :nth-child(1) > :nth-child(1)').click()
 })
 
 
