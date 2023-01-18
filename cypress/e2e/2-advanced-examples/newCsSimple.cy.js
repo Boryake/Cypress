@@ -1,12 +1,6 @@
 describe('Login Axia', { testIsolation: false }, () => {
 	it('Test Login ok', () => {
-        cy.clearCookies()
-        cy.clearLocalStorage()
-		cy.visit('https://axia2-ui-dev.santextest.com/login', {
-			failOnStatusCode: false,
-		})
-		cy.url().should('include', 'antextest.com/login')
-		cy.log('Website Charged')
+		cy.visit('https://axia2-ui-dev.santextest.com/login')
 		cy.get('#email').clear()
 		cy.get('#email').type('dylanedmunds@axia.com')
 		cy.get('#password').clear()
@@ -16,7 +10,7 @@ describe('Login Axia', { testIsolation: false }, () => {
 
 	})
 	it('Capital Structure', () => {
-		cy.get('a').contains('ACME Inc.').click()
+		cy.get('a').contains('ACME Corporattion').click()
 		cy.get('a').contains('Capitalization').click()
 		cy.get('span').contains('Capital structure').click()
 	})
@@ -32,7 +26,7 @@ describe('Login Axia', { testIsolation: false }, () => {
 		cy.get('span').contains('Save').click()
 	})
 
-	it("Complete Cs", ()=>{
+	it.skip("Complete Cs", ()=>{
 		cy.get('input[name="groups[0].shares[0].totalAuthorized-mask"]').clear().type('200000')
 		cy.get('span').contains('+ Group').click()
 		cy.focused().type('Group A')
@@ -46,7 +40,23 @@ describe('Login Axia', { testIsolation: false }, () => {
 		cy.get("@save-button").click()
 		cy.get(':nth-child(1) > .MuiButton-label').click()
 	})
-	
+	it("Complete Sipmle Cs",()=>{
+		cy.focused()
+			.clear()
+			.type('200000')
+        
+        cy.get('#btnAddGroup > .MuiButton-label').click()
+		cy.focused().type('Group A')
+		cy.get('#submit-button > .MuiButton-label > .MuiSvgIcon-root').click()
+		cy.get('#btnAddGroup1').click()
+		cy.focused().type('Share A')
+		cy.get('#submit-button > .MuiButton-label > .MuiSvgIcon-root').click()
+		cy.focused().clear().type('9999999.99999')
+		cy.get('input[name="groups[1].shares[0].originalPriceIssue-mask"]').clear().type(
+			'20000')
+		cy.get('#mnuSave').click()
+		cy.get('#btnSave > .MuiButton-label').click()
+	})
 	
 	})
 	

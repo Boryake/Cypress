@@ -17,6 +17,6 @@
   "dependencies": {
     "cypress": "^12.3.0",
     "cypress-xpath": "^2.0.1",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.2"
   }
 }
