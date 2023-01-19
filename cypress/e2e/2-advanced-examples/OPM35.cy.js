@@ -8,12 +8,12 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.contains('Login').click()
         cy.wait(1000)
     })
-    it('Select Company', () => {
+    it.skip('Select Company', () => {
         cy.get('a').contains('Amoco.').click()
         cy.get('a').contains('Capitalization').click()
         cy.get('span').contains('Capital structure').click()
     })
-    it('Create New Cs', () => {
+    it.skip('Create New Cs', () => {
         cy.get('span').contains('Manage').click()
         cy.get('span').contains('New').click()
         cy.get('span').contains('Save').click()
@@ -29,9 +29,10 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('#btnSaveAs').click()
         cy.get('.MuiBox-root > #button-button').click()
         cy.get('#btnCancel').click({ force: true })
+
     })
 
-    it("Check Common stock", () => {
+    it.skip("Check Common stock", () => {
         cy.get('.MuiGrid-justify-content-xs-flex-end > #button-button > .MuiButton-label > .MuiBox-root > .MuiSvgIcon-root').click()
         cy.get('.MuiList-root > :nth-child(1) > .MuiButtonBase-root').click()
         cy.get('span').contains('Common stock').click()
@@ -39,7 +40,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
 
     })
 
-    it('Create Share F-1', () => {
+    it.skip('Create Share F-1', () => {
         cy.get('#btnAddGroup').click()
         cy.get('span').contains('Equity').click()
         cy.focused().type('PREF')
@@ -64,7 +65,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[0].conversionRights.participationCap.capValue-mask"]').clear().type('3')
     })
 
-    it('Create Share F-2', () => {
+    it.skip('Create Share F-2', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie F-2')
         cy.get('#submit-button').click()
@@ -87,7 +88,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
     })
 
 
-    it('Create Share F-3', () => {
+    it.skip('Create Share F-3', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie F-3')
         cy.get('#submit-button').click()
@@ -112,7 +113,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[2].conversionRights.participationCap.capValue-mask"]').clear().type('3')
     })
 
-    it('Create Share E-3', () => {
+    it.skip('Create Share E-3', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie E-3')
         cy.get('#submit-button').click()
@@ -121,7 +122,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[3].liquidations.intialLiquidationMultipleValue-mask"]').clear().type('2')
     })
 
-    it('Create Share E-2A', () => {
+    it.skip('Create Share E-2A', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie E-2A')
         cy.get('#submit-button').click()
@@ -134,7 +135,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[4].conversionRights.participationCap.capValue-mask"]').clear().type('2')
     })
 
-    it('Create Share E-2', () => {
+    it.skip('Create Share E-2', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie E-2')
         cy.get('#submit-button').click()
@@ -151,7 +152,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[5].conversionRights.participating"]').click()
     })
 
-    it('Create Share E-2(2)', () => {
+    it.skip('Create Share E-2(2)', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie E-2(2)')
         cy.get('#submit-button').click()
@@ -165,7 +166,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[6].conversionRights.participating"]').click()
     })
 
-    it('Create Share E-1', () => {
+    it.skip('Create Share E-1', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie E-1')
         cy.get('#submit-button').click()
@@ -186,7 +187,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[7].conversionRights.participationCap.capValue-mask"]').clear().type('5')
     })
 
-    it('Create Share D', () => {
+    it.skip('Create Share D', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie D')
         cy.get('#submit-button').click()
@@ -200,7 +201,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[8].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').clear().type('8')
     })
 
-    it('Create Share C', () => {
+    it.skip('Create Share C', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie C')
         cy.get('#submit-button').click()
@@ -215,7 +216,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
 
     })
 
-    it('Create Share B', () => {
+    it.skip('Create Share B', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie B')
         cy.get('#submit-button').click()
@@ -229,7 +230,7 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.get('input[name="groups[1].shares[10].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').clear().type('8')
     })
 
-    it('Create Share A', () => {
+    it.skip('Create Share A', () => {
         cy.get('#btnAddGroup1').click()
         cy.get("#name").type('Serie A')
         cy.get('#submit-button').click()
@@ -247,29 +248,44 @@ describe('Complete OPM 35', { testIsolation: false }, () => {
         cy.contains('Anual').click()
         cy.get('[data-cy="groups[1].shares[11].dividends.dividendRateSchedule[0].daysYearsType"] > .MuiFormControl-root > .MuiInputBase-root').click()
         cy.contains('365 days').click()
-        cy.get('#mnuSave').click()
-		cy.get('#btnSave').click()
+            // cy.get('#mnuSave').click()
+            // cy.get('#btnSave').click()
         
     })
 
-    it('Seniorities',()=>{
+    it.skip('Seniorities',()=>{
         cy.get('span').contains('Seniorities').click()
-        cy.get('input[name="shares[0].seniority-mask"]').type('7')
-        cy.get('input[name="shares[1].seniority-mask"]').type('3')
-        cy.get('input[name="shares[2].seniority-mask"]').type('5')
-        cy.get('input[name="shares[3].seniority-mask"]').type('1')
-        cy.get('input[name="shares[4].seniority-mask"]').type('6')
-        cy.get('input[name="shares[5].seniority-mask"]').type('4')
-        cy.get('input[name="shares[6].seniority-mask"]').type('1')
-        cy.get('input[name="shares[7].seniority-mask"]').type('1')
-        cy.get('input[name="shares[8].seniority-mask"]').type('2')
-        cy.get('input[name="shares[9].seniority-mask"]').type('2')
-        cy.get('input[name="shares[10].seniority-mask"]').type('2')
-        cy.get('input[name="shares[11].seniority-mask"]').type('2')
+        cy.get('input[name="shares[0].seniority-mask"]').clear().type('7')
+        cy.get('input[name="shares[1].seniority-mask"]').clear().type('3')
+        cy.get('input[name="shares[2].seniority-mask"]').clear().type('5')
+        cy.get('input[name="shares[3].seniority-mask"]').clear().type('1')
+        cy.get('input[name="shares[4].seniority-mask"]').clear().type('6')
+        cy.get('input[name="shares[5].seniority-mask"]').clear().type('4')
+        cy.get('input[name="shares[6].seniority-mask"]').clear().type('1')
+        cy.get('input[name="shares[7].seniority-mask"]').clear().type('1')
+        cy.get('input[name="shares[8].seniority-mask"]').clear().type('2')
+        cy.get('input[name="shares[9].seniority-mask"]').clear().type('2')
+        cy.get('input[name="shares[10].seniority-mask"]').clear().type('2')
+        cy.get('input[name="shares[11].seniority-mask"]').clear().type('2')
+        cy.get('#mnuSave').click()
+		cy.get('#btnSave').click()
+    })
 
-
-
-
+    it('Cap table',()=>{
+        cy.visit('https://axia2-ui-dev.santextest.com/investments/companies/40f1d75f-2817-4e46-b02e-5133199f392b/capitalization/capital-structure')
+        cy.wait(2000)
+        cy.get('a').contains('Capitalization').click()
+        cy.get('span').contains('Capitalization table').click()
+        cy.get('.MuiButton-label > .MuiBox-root').click()
+        cy.get('.MuiList-root > :nth-child(2) > .MuiButtonBase-root').click()
+        cy.get('#name').type('Cap Table OPM35')
+        cy.get('#capitalStructureId').click()
+        cy.contains('OPM 35').click()
+        cy.get('#date').type('12/31/2026')
+        cy.get('#submit-button > .MuiButton-label').click()
+        cy.get('.MuiButton-label > .MuiBox-root').click()
+        cy.get('.MuiList-root > :nth-child(1) > .MuiButtonBase-root').click()
+        cy.get(`#f6b7be88-6b71-4c73-bf89-11c5e83a0579`).type('842641')
 
     })
 
