@@ -3,7 +3,7 @@
 describe('Create Cs with validations', { testIsolation: false }, () => {
 
 	it('Test Login ok', () => {
-		cy.visit('https://axia2-ui-dev.santextest.com/login')
+		cy.visit('https://axia2-ui-qa.santextest.com/login')
 		cy.clearCookies()
 		cy.get('#email').clear()
 		cy.get('#email').type('alisonbaker@axia.com')
@@ -14,7 +14,7 @@ describe('Create Cs with validations', { testIsolation: false }, () => {
 
 	})
 	it('Select Company', () => {
-		cy.get('a').contains('Amoco.').click()
+		cy.get('a').contains('NOKIA').click()
 		cy.get('a').contains('Capitalization').click()
 		cy.get('span').contains('Capital structure').click()
 	})
@@ -123,12 +123,12 @@ describe('Create Cs with validations', { testIsolation: false }, () => {
 		cy.get('.MuiGrid-justify-content-xs-flex-end > #button-button > .MuiButton-label > .MuiBox-root > .MuiSvgIcon-root').click()
 		cy.get('.MuiList-root > :nth-child(1) > .MuiButtonBase-root').click()
 		cy.get('input[name="groups[1].shares[0].dividends.cumulative"]').click()
-		cy.get('input[name="groups[1].shares[0].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').clear().type('9.33')
+		cy.get('input[name="groups[1].shares[0].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').clear().type('3.33')
 		cy.get('#mnuSave').click()
 		cy.get('#btnSave').click()
 
 		//Enciende Paid upon y guarda. 
-		// cy.get('input[name="groups[1].shares[0].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').should('have.value', '9.33')
+		cy.get('input[name="groups[1].shares[0].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').should('have.value', '3.33')
 		cy.get('.MuiGrid-justify-content-xs-flex-end > #button-button > .MuiButton-label > .MuiBox-root > .MuiSvgIcon-root').click()
 		cy.get('.MuiList-root > :nth-child(1) > .MuiButtonBase-root').click()
 		cy.get('input[name="groups[1].shares[0].dividends.paidUponLiquidation"]').click()
@@ -153,12 +153,12 @@ describe('Create Cs with validations', { testIsolation: false }, () => {
 		cy.get('.MuiList-root > :nth-child(1) > .MuiButtonBase-root').click()
 		cy.get('input[name="groups[1].shares[0].dividends.cumulative"]').click()
 		cy.get('input[name="groups[1].shares[0].dividends.paidUponConversion"]').click()
-		cy.get('input[name="groups[1].shares[0].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').clear().type('9.32')
+		cy.get('input[name="groups[1].shares[0].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').clear().type('9.23')
 		cy.get('#mnuSave').click()
 		cy.get('#btnSave').click()
 
 		//Apaga Paid Upon L
-		cy.get('input[name="groups[1].shares[0].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').should('have.value', '9.32')
+		cy.get('input[name="groups[1].shares[0].dividends.dividendRateSchedule[0].rateXShareValue-mask"]').should('have.value', '9.23')
 		cy.get('.MuiGrid-justify-content-xs-flex-end > #button-button > .MuiButton-label > .MuiBox-root > .MuiSvgIcon-root').click()
 		cy.get('.MuiList-root > :nth-child(1) > .MuiButtonBase-root').click()
 		cy.get('input[name="groups[1].shares[0].dividends.paidUponLiquidation"]').click()

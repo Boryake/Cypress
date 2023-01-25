@@ -20,10 +20,10 @@ describe('Login Axia', { testIsolation: false }, () => {
         cy.get('#capitalStructureId').click()
         cy.contains('Test Cypress').click()
         cy.get('#submit-button').click()
-        cy.get('.jss350 > .MuiBox-root').contains('Required')
+        cy.contains('Required')
         cy.get('#date').type("13/12/2023")
         cy.get('#submit-button').click()
-        cy.get('.jss359 > .MuiBox-root').contains('Must be')
+        cy.contains('Must be')
     })
 
     it("Create cap table without select cs", ()=> {
@@ -33,7 +33,7 @@ describe('Login Axia', { testIsolation: false }, () => {
         cy.get('#name').type('Test Cypress')
         cy.get('#capitalStructureId').click()
         cy.get('#submit-button').click()
-        cy.get('.jss342 > .MuiBox-root').contains('Required')
+        cy.contains('Required')
     })
     it("Create cap table without name", ()=> {
         cy.visit('https://axia2-ui-qa.santextest.com/investments/companies/a3d27a5f-3d1c-4b65-8c20-f1499c2c82b5/capitalization/capitalization-table')
@@ -41,7 +41,7 @@ describe('Login Axia', { testIsolation: false }, () => {
         cy.get('.MuiList-root > :nth-child(2) > .MuiButtonBase-root').click()
         cy.get('#capitalStructureId').click()
         cy.get('#submit-button').click()
-        cy.get('.jss342 > .MuiBox-root').contains('Required')
+        cy.contains('Required')
     })
 
 })
